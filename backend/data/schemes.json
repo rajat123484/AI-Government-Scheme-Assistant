@@ -1,0 +1,20 @@
+[
+  {
+    "name": "National Scholarship Portal",
+    "occupation": "Student",
+    "benefit": "Scholarships for students",
+    "link": "https://scholarships.gov.in"
+  },
+  {
+    "name": "PM Jan Dhan Yojana",
+    "max_income": 300000,
+    "benefit": "Zero balance bank account",
+    "link": "https://pmjdy.gov.in"
+  },
+  {
+    "name": "Post Matric Scholarship",
+    "category": ["SC", "ST", "OBC"],
+    "benefit": "Financial assistance for higher education",
+    "link": "https://scholarships.gov.in"
+  }
+]
