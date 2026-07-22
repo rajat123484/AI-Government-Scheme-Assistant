@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Sahayak AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], }, colors: { primary: '#166534', secondary: '#ea580c', navy: '#1e3a8a', surface: '#f8fafc', } } } }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 h-screen flex overflow-hidden font-sans">
+
+    <!-- Left Sidebar -->
+    <aside class="w-24 bg-white border-r border-slate-200 flex flex-col items-center py-6 justify-between flex-shrink-0 z-20">
+        <div class="flex flex-col gap-6 w-full">
+            <a href="sahayak.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-house text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="schemes.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-gift text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Schemes</span>
+            </a>
+            <a href="ai-assistant.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-robot text-xl mb-1"></i>
+                <span class="text-[10px] font-medium text-center leading-tight mt-1">AI<br>Assistant</span>
+            </a>
+            <!-- Active Tab: Dashboard -->
+            <a href="dashboard.html" class="flex flex-col items-center justify-center cursor-pointer text-primary relative border-l-4 border-primary w-full py-2 bg-green-50/50">
+                <i class="fa-solid fa-chart-line text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Dashboard</span>
+            </a>
+            <a href="saved.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-regular fa-heart text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Saved</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 flex-shrink-0 z-10">
+            <a href="sahayak.html" class="flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-dharmachakra text-3xl text-navy"></i>
+                <h1 class="text-xl font-bold text-navy">Sahayak <span class="text-primary">AI</span></h1>
+            </a>
+            <div class="flex items-center gap-4">
+                <button class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium shadow-sm">My Profile</button>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-6 bg-slate-50">
+            <div class="max-w-[1200px] mx-auto space-y-6">
+                <!-- Welcome Banner -->
+                <div class="bg-gradient-to-r from-navy to-blue-800 rounded-2xl p-8 text-white shadow-md flex justify-between items-center relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 class="text-3xl font-bold mb-2">Welcome back, Rahul! 👋</h2>
+                        <p class="text-blue-200 text-sm max-w-lg">Your profile is 85% complete. Update your income details to unlock 12 more state-level schemes.</p>
+                        <button class="mt-4 bg-white text-navy px-5 py-2 rounded-full text-sm font-bold shadow hover:bg-slate-50 transition">Complete Profile</button>
+                    </div>
+                    <i class="fa-solid fa-chart-pie text-9xl absolute right-10 opacity-20 text-white transform rotate-12"></i>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-solid fa-file-lines"></i></span>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-slate-800">4</h3>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Total Applications</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><i class="fa-solid fa-check-circle"></i></span>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-slate-800">1</h3>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Approved Schemes</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center"><i class="fa-solid fa-clock"></i></span>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-slate-800">2</h3>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Pending Processing</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center"><i class="fa-solid fa-rupee-sign"></i></span>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-slate-800">₹6,000</h3>
+                        <p class="text-xs text-slate-500 font-medium mt-1">Benefits Received</p>
+                    </div>
+                </div>
+
+                <!-- Status & Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Application Status -->
+                    <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">Active Applications</h3>
+                        <div class="space-y-4">
+                            <!-- Status Item -->
+                            <div class="border border-slate-100 rounded-xl p-4 flex items-center justify-between bg-slate-50">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-primary text-xl"><i class="fa-solid fa-leaf"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 text-sm">PM Kisan Samman Nidhi</h4>
+                                        <p class="text-xs text-slate-500">ID: APP-9823-XYZ</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full border border-green-200">Approved</span>
+                                    <p class="text-[10px] text-slate-400 mt-2">Processed on 12 May 2026</p>
+                                </div>
+                            </div>
+                            <!-- Status Item -->
+                            <div class="border border-slate-100 rounded-xl p-4 flex items-center justify-between bg-white">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center text-blue-500 text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800 text-sm">Post Matric Scholarship</h4>
+                                        <p class="text-xs text-slate-500">ID: APP-4451-ABC</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full border border-orange-200">Under Review</span>
+                                    <p class="text-[10px] text-slate-400 mt-2">Submitted on 02 Jul 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Actions -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">To-Do List</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3 items-start">
+                                <i class="fa-regular fa-circle text-slate-300 mt-1 cursor-pointer hover:text-primary"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-700">Upload Aadhaar Card</h5>
+                                    <p class="text-xs text-slate-500">Required for Ayushman Bharat.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-start">
+                                <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-700 line-through">Link Bank Account</h5>
+                                    <p class="text-xs text-slate-500">Completed on 10 May 2026.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-start">
+                                <i class="fa-regular fa-circle text-slate-300 mt-1 cursor-pointer hover:text-primary"></i>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-700">Talk to AI Assistant</h5>
+                                    <p class="text-xs text-slate-500">Check eligibility for Mudra Loan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

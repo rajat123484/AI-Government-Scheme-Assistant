@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes Explorer - Sahayak AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#166534', // Green
+                        secondary: '#ea580c', // Orange
+                        navy: '#1e3a8a',
+                        surface: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 h-screen flex overflow-hidden font-sans">
+
+    <!-- Left Sidebar -->
+    <aside class="w-24 bg-white border-r border-slate-200 flex flex-col items-center py-6 justify-between flex-shrink-0 z-20">
+        <div class="flex flex-col gap-6 w-full">
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-house text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <!-- Active Tab: Schemes -->
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-primary relative border-l-4 border-primary w-full py-2 bg-green-50/50">
+                <i class="fa-solid fa-gift text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Schemes</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-robot text-xl mb-1"></i>
+                <span class="text-[10px] font-medium text-center leading-tight mt-1">AI<br>Assistant</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-chart-line text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Dashboard</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-regular fa-heart text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Saved</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-regular fa-file-lines text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Applications</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2 relative">
+                <i class="fa-regular fa-bell text-xl mb-1"></i>
+                <span class="absolute top-2 right-6 w-2 h-2 bg-secondary rounded-full"></span>
+                <span class="text-[10px] font-medium mt-1">Notifications</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-regular fa-user text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Profile</span>
+            </a>
+        </div>
+        
+        <div class="mt-4 border border-slate-200 rounded-lg p-2 mx-2 text-center bg-white shadow-sm">
+            <div class="text-xl mb-1">🇮🇳</div>
+            <div class="text-[10px] font-bold text-slate-800">Jai Hind</div>
+            <div class="text-[8px] text-slate-500 leading-tight mt-1">Empowering every citizen</div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        
+        <!-- Top Navigation -->
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 flex-shrink-0 z-10">
+            <div class="flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-dharmachakra text-3xl text-navy"></i>
+                <div class="leading-tight">
+                    <h1 class="text-xl font-bold text-navy">Sahayak <span class="text-primary">AI</span></h1>
+                    <p class="text-[10px] text-slate-500 font-medium">Government Scheme Assistant</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-slate-600 hover:text-slate-900 font-medium flex items-center gap-2 h-16"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#" class="text-primary font-medium flex items-center gap-2 border-b-2 border-primary h-16"><i class="fa-solid fa-gift"></i> Schemes</a>
+                <a href="#" class="text-slate-600 hover:text-slate-900 font-medium flex items-center gap-2 h-16"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Assistant</a>
+                <a href="#" class="text-slate-600 hover:text-slate-900 font-medium flex items-center gap-2 h-16"><i class="fa-solid fa-border-all"></i> Dashboard</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1 cursor-pointer text-sm font-medium text-slate-700 hover:text-slate-900 border-l border-slate-200 pl-4">
+                    <i class="fa-solid fa-globe text-slate-400"></i> English <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                </div>
+                <button class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-green-800 shadow-sm">My Profile</button>
+            </div>
+        </header>
+
+        <!-- Scrollable Content -->
+        <main class="flex-1 overflow-y-auto p-6 bg-slate-50">
+            <div class="max-w-[1600px] mx-auto space-y-6">
+                
+                <!-- Search and Header Section -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h2 class="text-2xl font-bold text-navy mb-2">Explore Government Schemes</h2>
+                    <p class="text-slate-500 text-sm mb-6">Search, filter, and discover the best central and state government schemes tailored for you.</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1 relative">
+                            <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="text" placeholder="Search by scheme name, ministry, or keyword..." class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition shadow-inner">
+                        </div>
+                        <button class="px-6 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-xl hover:bg-slate-50 flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-sliders text-primary"></i> Advanced Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Filters -->
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-slate-800">Categories</h3>
+                        <span class="text-sm text-slate-500 font-medium" id="result-count">Showing 6 schemes</span>
+                    </div>
+                    
+                    <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide" id="filter-container">
+                        <button class="filter-btn active px-5 py-2 bg-primary text-white text-sm font-medium rounded-full whitespace-nowrap shadow-sm transition-all" data-filter="all">All Schemes</button>
+                        <button class="filter-btn px-5 py-2 bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm font-medium rounded-full whitespace-nowrap transition-all" data-filter="agriculture">🌾 Agriculture</button>
+                        <button class="filter-btn px-5 py-2 bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm font-medium rounded-full whitespace-nowrap transition-all" data-filter="healthcare">🏥 Healthcare</button>
+                        <button class="filter-btn px-5 py-2 bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm font-medium rounded-full whitespace-nowrap transition-all" data-filter="scholarship">🎓 Scholarship</button>
+                        <button class="filter-btn px-5 py-2 bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm font-medium rounded-full whitespace-nowrap transition-all" data-filter="business">💼 Business</button>
+                        <button class="filter-btn px-5 py-2 bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 text-sm font-medium rounded-full whitespace-nowrap transition-all" data-filter="housing">🏠 Housing</button>
+                    </div>
+                </div>
+
+                <!-- Scheme Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="scheme-grid">
+                    
+                    <!-- Card 1: Agriculture -->
+                    <div class="scheme-card bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden" data-category="agriculture">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-green-500"></div>
+                        <div class="flex items-start justify-between mb-3 mt-1">
+                            <div class="flex items-center gap-2 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                                <i class="fa-solid fa-building-columns text-slate-400 text-[10px]"></i>
+                                <span class="text-[10px] font-semibold text-slate-600 uppercase tracking-wider">Agriculture</span>
+                            </div>
+                            <span class="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md border border-green-100"><i class="fa-solid fa-check-circle mr-1"></i>98% Match</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">PM Kisan Samman Nidhi</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Income support to all landholding farmer families across the country.</p>
+                        <div class="space-y-3 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-green-600 shadow-sm"><i class="fa-solid fa-rupee-sign text-xs"></i></div> ₹6,000 / year
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-blue-500 shadow-sm"><i class="fa-solid fa-money-bill-transfer text-xs"></i></div> Direct Transfer
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 bg-primary text-white rounded-xl py-2.5 text-sm font-medium hover:bg-green-800 shadow-sm transition">Apply Now</button>
+                            <button class="w-10 h-10 border border-slate-200 text-slate-400 rounded-xl hover:bg-slate-50 hover:text-secondary flex items-center justify-center transition tooltip"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Healthcare -->
+                    <div class="scheme-card bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden" data-category="healthcare">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-red-500"></div>
+                        <div class="flex items-start justify-between mb-3 mt-1">
+                            <div class="flex items-center gap-2 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                                <i class="fa-solid fa-building-columns text-slate-400 text-[10px]"></i>
+                                <span class="text-[10px] font-semibold text-slate-600 uppercase tracking-wider">Health</span>
+                            </div>
+                            <span class="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md border border-green-100"><i class="fa-solid fa-check-circle mr-1"></i>95% Match</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Ayushman Bharat PM-JAY</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Health coverage of up to ₹5 lakhs per family per year for secondary and tertiary care.</p>
+                        <div class="space-y-3 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-red-500 shadow-sm"><i class="fa-solid fa-shield-heart text-xs"></i></div> ₹5,00,000 Cover
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-teal-500 shadow-sm"><i class="fa-solid fa-hospital text-xs"></i></div> Cashless
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 bg-primary text-white rounded-xl py-2.5 text-sm font-medium hover:bg-green-800 shadow-sm transition">Apply Now</button>
+                            <button class="w-10 h-10 border border-slate-200 text-slate-400 rounded-xl hover:bg-slate-50 hover:text-secondary flex items-center justify-center transition"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Scholarship -->
+                    <div class="scheme-card bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden" data-category="scholarship">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-blue-500"></div>
+                        <div class="flex items-start justify-between mb-3 mt-1">
+                            <div class="flex items-center gap-2 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                                <i class="fa-solid fa-building-columns text-slate-400 text-[10px]"></i>
+                                <span class="text-[10px] font-semibold text-slate-600 uppercase tracking-wider">Education</span>
+                            </div>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-1 rounded-md border border-slate-200">Check Eligibility</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Post Matric Scholarship</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Financial assistance to students belonging to SC/ST/OBC/General categories for higher studies.</p>
+                        <div class="space-y-3 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-blue-600 shadow-sm"><i class="fa-solid fa-graduation-cap text-xs"></i></div> Degree/Diploma
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-orange-500 shadow-sm"><i class="fa-solid fa-award text-xs"></i></div> Merit Based
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 border border-primary text-primary rounded-xl py-2.5 text-sm font-medium hover:bg-green-50 transition">View Details</button>
+                            <button class="w-10 h-10 border border-slate-200 text-slate-400 rounded-xl hover:bg-slate-50 hover:text-secondary flex items-center justify-center transition"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Business -->
+                    <div class="scheme-card bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden" data-category="business">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-orange-500"></div>
+                        <div class="flex items-start justify-between mb-3 mt-1">
+                            <div class="flex items-center gap-2 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                                <i class="fa-solid fa-building-columns text-slate-400 text-[10px]"></i>
+                                <span class="text-[10px] font-semibold text-slate-600 uppercase tracking-wider">MSME</span>
+                            </div>
+                            <span class="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md border border-green-100"><i class="fa-solid fa-check-circle mr-1"></i>89% Match</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">PM Mudra Yojana</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Collateral-free loans provided to non-corporate, non-farm small/micro enterprises.</p>
+                        <div class="space-y-3 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-green-600 shadow-sm"><i class="fa-solid fa-wallet text-xs"></i></div> Up to ₹10 Lakh
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-purple-500 shadow-sm"><i class="fa-solid fa-handshake text-xs"></i></div> No Collateral
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 bg-primary text-white rounded-xl py-2.5 text-sm font-medium hover:bg-green-800 shadow-sm transition">Apply Now</button>
+                            <button class="w-10 h-10 border border-slate-200 text-secondary bg-orange-50 rounded-xl flex items-center justify-center transition"><i class="fa-solid fa-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Housing -->
+                    <div class="scheme-card bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden" data-category="housing">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-teal-500"></div>
+                        <div class="flex items-start justify-between mb-3 mt-1">
+                            <div class="flex items-center gap-2 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                                <i class="fa-solid fa-building-columns text-slate-400 text-[10px]"></i>
+                                <span class="text-[10px] font-semibold text-slate-600 uppercase tracking-wider">Housing</span>
+                            </div>
+                            <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-1 rounded-md border border-slate-200">Check Eligibility</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">PM Awas Yojana</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Aims to provide housing for all in urban areas with credit-linked subsidies.</p>
+                        <div class="space-y-3 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-teal-600 shadow-sm"><i class="fa-solid fa-house-chimney text-xs"></i></div> Housing Subsidy
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-orange-500 shadow-sm"><i class="fa-solid fa-city text-xs"></i></div> Urban / Rural
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 border border-primary text-primary rounded-xl py-2.5 text-sm font-medium hover:bg-green-50 transition">View Details</button>
+                            <button class="w-10 h-10 border border-slate-200 text-slate-400 rounded-xl hover:bg-slate-50 hover:text-secondary flex items-center justify-center transition"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Business / Women -->
+                    <div class="scheme-card bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col relative overflow-hidden" data-category="business">
+                        <div class="absolute top-0 left-0 right-0 h-1 bg-pink-500"></div>
+                        <div class="flex items-start justify-between mb-3 mt-1">
+                            <div class="flex items-center gap-2 bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                                <i class="fa-solid fa-building-columns text-slate-400 text-[10px]"></i>
+                                <span class="text-[10px] font-semibold text-slate-600 uppercase tracking-wider">Finance</span>
+                            </div>
+                            <span class="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-1 rounded-md border border-green-100"><i class="fa-solid fa-check-circle mr-1"></i>75% Match</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Stand-Up India</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Bank loans to at least one SC/ST borrower and one woman borrower per bank branch.</p>
+                        <div class="space-y-3 mb-5 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-pink-500 shadow-sm"><i class="fa-solid fa-person-dress text-xs"></i></div> Women & SC/ST
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                                <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-green-600 shadow-sm"><i class="fa-solid fa-money-bill-trend-up text-xs"></i></div> ₹10 Lakh - ₹1 Cr
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 border border-primary text-primary rounded-xl py-2.5 text-sm font-medium hover:bg-green-50 transition">View Details</button>
+                            <button class="w-10 h-10 border border-slate-200 text-slate-400 rounded-xl hover:bg-slate-50 hover:text-secondary flex items-center justify-center transition"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Empty State (Hidden by default) -->
+                <div id="empty-state" class="hidden flex flex-col items-center justify-center py-16 bg-white rounded-2xl border border-slate-200 text-center">
+                    <div class="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-regular fa-folder-open text-3xl text-slate-300"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-1">No schemes found</h3>
+                    <p class="text-sm text-slate-500 max-w-sm">We couldn't find any schemes matching this category right now. Try selecting another filter.</p>
+                    <button class="mt-6 px-6 py-2.5 bg-white border border-slate-300 text-slate-700 rounded-full text-sm font-medium hover:bg-slate-50" onclick="document.querySelector('[data-filter=\'all\']').click()">Clear Filters</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Interactive JavaScript for filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const schemeCards = document.querySelectorAll('.scheme-card');
+            const resultCount = document.getElementById('result-count');
+            const emptyState = document.getElementById('empty-state');
+
+            // Default Active Classes (Tailwind utility arrays)
+            const activeClasses = ['bg-primary', 'text-white'];
+            const inactiveClasses = ['bg-white', 'text-slate-600', 'border-slate-200'];
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // 1. Reset all buttons to inactive
+                    filterBtns.forEach(b => {
+                        b.classList.remove(...activeClasses);
+                        b.classList.add(...inactiveClasses, 'border');
+                    });
+
+                    // 2. Set clicked button to active
+                    btn.classList.remove(...inactiveClasses, 'border');
+                    btn.classList.add(...activeClasses);
+
+                    // 3. Filter the cards
+                    const filterValue = btn.getAttribute('data-filter');
+                    let visibleCount = 0;
+
+                    schemeCards.forEach(card => {
+                        // Reset animation
+                        card.classList.remove('fade-in');
+                        
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                            visibleCount++;
+                            // Trigger reflow for animation
+                            void card.offsetWidth; 
+                            card.classList.add('fade-in');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // 4. Update count text and handle empty state
+                    resultCount.textContent = `Showing ${visibleCount} scheme${visibleCount !== 1 ? 's' : ''}`;
+                    
+                    if (visibleCount === 0) {
+                        emptyState.classList.remove('hidden');
+                    } else {
+                        emptyState.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

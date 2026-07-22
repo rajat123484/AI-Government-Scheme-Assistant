@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Schemes - Sahayak AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], }, colors: { primary: '#166534', secondary: '#ea580c', navy: '#1e3a8a', surface: '#f8fafc', } } } }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 h-screen flex overflow-hidden font-sans">
+
+    <!-- Left Sidebar -->
+    <aside class="w-24 bg-white border-r border-slate-200 flex flex-col items-center py-6 justify-between flex-shrink-0 z-20">
+        <div class="flex flex-col gap-6 w-full">
+            <a href="sahayak.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-house text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="schemes.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-gift text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Schemes</span>
+            </a>
+            <a href="ai-assistant.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-robot text-xl mb-1"></i>
+                <span class="text-[10px] font-medium text-center leading-tight mt-1">AI<br>Assistant</span>
+            </a>
+            <a href="dashboard.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-chart-line text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Dashboard</span>
+            </a>
+            <!-- Active Tab: Saved -->
+            <a href="saved.html" class="flex flex-col items-center justify-center cursor-pointer text-primary relative border-l-4 border-primary w-full py-2 bg-green-50/50">
+                <i class="fa-solid fa-heart text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Saved</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 flex-shrink-0 z-10">
+            <a href="sahayak.html" class="flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-dharmachakra text-3xl text-navy"></i>
+                <h1 class="text-xl font-bold text-navy">Sahayak <span class="text-primary">AI</span></h1>
+            </a>
+            <div class="flex items-center gap-4">
+                <button class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium shadow-sm">My Profile</button>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-6 bg-slate-50">
+            <div class="max-w-[1200px] mx-auto space-y-6">
+                <!-- Header -->
+                <div class="flex items-center justify-between bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div>
+                        <h2 class="text-2xl font-bold text-navy mb-1"><i class="fa-solid fa-bookmark text-secondary mr-2"></i> Saved Schemes</h2>
+                        <p class="text-slate-500 text-sm">You have 3 schemes bookmarked for later.</p>
+                    </div>
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" placeholder="Search saved..." class="pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-primary">
+                    </div>
+                </div>
+
+                <!-- Saved Schemes Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Saved Card 1 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col relative group">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">Business</span>
+                            <!-- Filled Bookmark Icon -->
+                            <button class="text-secondary hover:text-red-500 transition"><i class="fa-solid fa-bookmark text-lg"></i></button>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">PM Mudra Yojana</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Collateral-free loans provided to non-corporate, non-farm small/micro enterprises.</p>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 bg-primary text-white rounded-xl py-2 text-sm font-medium hover:bg-green-800 transition">Resume Application</button>
+                        </div>
+                    </div>
+
+                    <!-- Saved Card 2 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col relative">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">Housing</span>
+                            <button class="text-secondary hover:text-red-500 transition"><i class="fa-solid fa-bookmark text-lg"></i></button>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">PM Awas Yojana</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Aims to provide housing for all in urban areas with credit-linked subsidies.</p>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 bg-white border border-primary text-primary rounded-xl py-2 text-sm font-medium hover:bg-green-50 transition">Review Documents</button>
+                        </div>
+                    </div>
+
+                    <!-- Saved Card 3 -->
+                    <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col relative">
+                        <div class="flex items-start justify-between mb-3">
+                            <span class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">Education</span>
+                            <button class="text-secondary hover:text-red-500 transition"><i class="fa-solid fa-bookmark text-lg"></i></button>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Stand-Up India</h4>
+                        <p class="text-sm text-slate-500 mb-5 flex-1">Bank loans to at least one SC/ST borrower and one woman borrower per bank branch.</p>
+                        <div class="flex items-center gap-3">
+                            <button class="flex-1 bg-primary text-white rounded-xl py-2 text-sm font-medium hover:bg-green-800 transition">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Sahayak AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: { primary: '#166534', secondary: '#ea580c', navy: '#1e3a8a', surface: '#f8fafc', }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 h-screen flex overflow-hidden font-sans">
+
+    <!-- Left Sidebar -->
+    <aside class="w-24 bg-white border-r border-slate-200 flex flex-col items-center py-6 justify-between flex-shrink-0 z-20">
+        <div class="flex flex-col gap-6 w-full">
+            <a href="sahayak.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-house text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a href="schemes.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-gift text-xl mb-1"></i>
+                <span class="text-[10px] font-medium">Schemes</span>
+            </a>
+            <!-- Active Tab: AI Assistant -->
+            <a href="ai-assistant.html" class="flex flex-col items-center justify-center cursor-pointer text-primary relative border-l-4 border-primary w-full py-2 bg-green-50/50">
+                <i class="fa-solid fa-robot text-xl mb-1"></i>
+                <span class="text-[10px] font-medium text-center leading-tight mt-1">AI<br>Assistant</span>
+            </a>
+            <a href="dashboard.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-solid fa-chart-line text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Dashboard</span>
+            </a>
+            <a href="saved.html" class="flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 w-full py-2">
+                <i class="fa-regular fa-heart text-xl mb-1"></i>
+                <span class="text-[10px] font-medium mt-1">Saved</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        <!-- Top Navigation -->
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 flex-shrink-0 z-10">
+            <a href="sahayak.html" class="flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-dharmachakra text-3xl text-navy"></i>
+                <div class="leading-tight">
+                    <h1 class="text-xl font-bold text-navy">Sahayak <span class="text-primary">AI</span></h1>
+                </div>
+            </a>
+            <div class="flex items-center gap-4">
+                <button class="px-5 py-2 bg-primary text-white rounded-full text-sm font-medium hover:bg-green-800 shadow-sm">My Profile</button>
+            </div>
+        </header>
+
+        <!-- Chat Layout -->
+        <main class="flex-1 flex overflow-hidden">
+            <!-- Chat History Sidebar -->
+            <div class="w-64 bg-white border-r border-slate-200 flex flex-col">
+                <div class="p-4 border-b border-slate-100">
+                    <button class="w-full flex items-center justify-center gap-2 bg-slate-50 border border-slate-200 text-slate-700 py-2 rounded-xl text-sm font-medium hover:bg-slate-100 transition">
+                        <i class="fa-solid fa-plus"></i> New Chat
+                    </button>
+                </div>
+                <div class="flex-1 overflow-y-auto p-3 space-y-2">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 pt-2">Today</p>
+                    <button class="w-full text-left px-3 py-2 bg-green-50 text-green-800 rounded-lg text-sm font-medium truncate border border-green-100">Ayushman Bharat Eligibility</button>
+                    <button class="w-full text-left px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg text-sm font-medium truncate">Mudra Loan Documents</button>
+                    
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2 pt-4">Previous 7 Days</p>
+                    <button class="w-full text-left px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg text-sm font-medium truncate">PM Kisan Status Check</button>
+                    <button class="w-full text-left px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-lg text-sm font-medium truncate">State Scholarship for Girls</button>
+                </div>
+            </div>
+
+            <!-- Active Chat Window -->
+            <div class="flex-1 flex flex-col bg-slate-50 relative">
+                <!-- Messages Area -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                    <!-- AI Message -->
+                    <div class="flex gap-4 max-w-3xl">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary flex-shrink-0 border border-green-200">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm text-sm text-slate-700">
+                            <p class="mb-2">Namaste! I am Sahayak AI. How can I assist you with government schemes today?</p>
+                            <p>You can ask me things like:</p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-600">
+                                <li>"Am I eligible for PM Awas Yojana?"</li>
+                                <li>"What documents do I need for a startup loan?"</li>
+                                <li>"Find healthcare schemes for my parents."</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- User Message -->
+                    <div class="flex gap-4 max-w-3xl ml-auto justify-end">
+                        <div class="bg-primary text-white rounded-2xl p-4 shadow-sm text-sm">
+                            <p>I want to know if my family is eligible for the Ayushman Bharat health card. My father is a farmer and we live in a village.</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 flex-shrink-0 border border-slate-300">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                    </div>
+
+                    <!-- AI Message -->
+                    <div class="flex gap-4 max-w-3xl">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-primary flex-shrink-0 border border-green-200">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm text-sm text-slate-700 space-y-3">
+                            <p>Yes, based on the details you provided, your family has a high chance of being eligible for the <strong>Ayushman Bharat PM-JAY</strong> scheme.</p>
+                            <p>This scheme specifically targets poor, deprived rural families based on the Socio-Economic Caste Census (SECC) 2011 data.</p>
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex items-start gap-3">
+                                <i class="fa-solid fa-clipboard-check text-green-600 mt-0.5"></i>
+                                <div>
+                                    <h5 class="font-bold text-slate-800">Next Step: Check your exact status</h5>
+                                    <p class="text-xs text-slate-500 mt-1">Do you have your father's Aadhaar card or Ration card number handy? I can help you verify the exact status.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-6 bg-white border-t border-slate-200">
+                    <div class="max-w-4xl mx-auto flex items-center gap-3">
+                        <button class="w-10 h-10 rounded-full text-slate-400 hover:text-primary hover:bg-green-50 flex items-center justify-center transition">
+                            <i class="fa-solid fa-microphone"></i>
+                        </button>
+                        <div class="flex-1 bg-slate-50 border border-slate-300 rounded-full flex items-center px-4 py-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary shadow-inner">
+                            <input type="text" placeholder="Reply to Sahayak AI..." class="flex-1 bg-transparent border-none outline-none text-sm text-slate-700">
+                            <button class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-paperclip"></i></button>
+                        </div>
+                        <button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-green-800 shadow-md transition">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <p class="text-center text-[10px] text-slate-400 mt-3">Sahayak AI may make mistakes. Please verify important information on official portals.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
