@@ -1,0 +1,3144 @@
+/* ============================================================
+   SCHEMEAI - PROFESSIONAL UI
+   ============================================================ */
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f9ff 0%,
+            #eef5ff 50%,
+            #f8fbff 100%
+        );
+
+    color: #09203f;
+
+    min-height: 100vh;
+
+}
+
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+
+    height: 88px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid
+        #e3eaf3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 7%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brand-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.brand span {
+
+    display: block;
+
+    color: #71819a;
+
+    font-size: 12px;
+
+    margin-top: 3px;
+
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #149447;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.status-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #20c46b;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(
+            32,
+            196,
+            107,
+            0.12
+        );
+
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero,
+.results-hero {
+
+    text-align: center;
+
+    padding:
+        85px 20px 55px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding:
+        9px 18px;
+
+    border-radius: 30px;
+
+    background:
+        #e9f2ff;
+
+    color:
+        #1467dc;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+
+    animation:
+        fadeDown
+        0.7s
+        ease;
+
+}
+
+
+.hero h1,
+.results-hero h1 {
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            66px
+        );
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -2.8px;
+
+    max-width:
+        850px;
+
+    margin:
+        auto;
+
+    animation:
+        fadeUp
+        0.8s
+        ease;
+
+}
+
+
+.hero h1 span,
+.results-hero h1 span {
+
+    display: block;
+
+    color:
+        #1769e0;
+
+}
+
+
+.hero p,
+.results-hero p {
+
+    max-width:
+        700px;
+
+    margin:
+        25px auto 0;
+
+    color:
+        #667994;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.7;
+
+    animation:
+        fadeUp
+        1s
+        ease;
+
+}
+
+
+/* ============================================================
+   PROFILE CARD
+   ============================================================ */
+
+.profile-container {
+
+    width:
+        min(
+            900px,
+            92%
+        );
+
+    margin:
+        0 auto 100px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
+
+    border:
+        1px solid
+        #e1e9f3;
+
+    border-radius:
+        28px;
+
+    padding:
+        45px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            22,
+            61,
+            110,
+            0.10
+        );
+
+    animation:
+        cardAppear
+        0.9s
+        ease;
+
+}
+
+
+.form-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom:
+        30px;
+
+    border-bottom:
+        1px solid
+        #e8edf4;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.form-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        #edf5ff;
+
+    border-radius:
+        17px;
+
+    font-size:
+        25px;
+
+}
+
+
+.form-header h2 {
+
+    font-size:
+        24px;
+
+}
+
+
+.form-header p {
+
+    color:
+        #74849a;
+
+    margin-top:
+        5px;
+
+}
+
+
+/* ============================================================
+   FORM
+   ============================================================ */
+
+.form-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        25px;
+
+}
+
+
+.form-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        9px;
+
+}
+
+
+.form-group.full-width {
+
+    grid-column:
+        span 2;
+
+}
+
+
+.form-group label {
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    color:
+        #173452;
+
+}
+
+
+.form-group label span {
+
+    color:
+        #e63946;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width:
+        100%;
+
+    height:
+        55px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid
+        #d9e2ed;
+
+    border-radius:
+        12px;
+
+    background:
+        #fbfdff;
+
+    color:
+        #122c49;
+
+    font-size:
+        15px;
+
+    outline:
+        none;
+
+    transition:
+        0.25s;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color:
+        #1976e8;
+
+    background:
+        white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            25,
+            118,
+            232,
+            0.10
+        );
+
+}
+
+
+.input-prefix {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    border:
+        1px solid
+        #d9e2ed;
+
+    border-radius:
+        12px;
+
+    background:
+        #fbfdff;
+
+    overflow:
+        hidden;
+
+}
+
+
+.input-prefix span {
+
+    padding-left:
+        17px;
+
+    color:
+        #6e7e94;
+
+    font-weight:
+        700;
+
+}
+
+
+.input-prefix input {
+
+    border:
+        none;
+
+}
+
+
+.input-prefix:focus-within {
+
+    border-color:
+        #1976e8;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            25,
+            118,
+            232,
+            0.10
+        );
+
+}
+
+
+/* ============================================================
+   FORM FOOTER
+   ============================================================ */
+
+.form-footer {
+
+    margin-top:
+        35px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        #e8edf4;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+}
+
+
+.privacy-note {
+
+    color:
+        #77879b;
+
+    font-size:
+        12px;
+
+}
+
+
+.primary-btn {
+
+    border:
+        none;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        15px 25px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0866d7,
+            #1680ff
+        );
+
+    color:
+        white;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            20,
+            103,
+            220,
+            0.25
+        );
+
+    transition:
+        0.25s;
+
+}
+
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(
+            20,
+            103,
+            220,
+            0.35
+        );
+
+}
+
+
+.primary-btn:disabled {
+
+    opacity:
+        0.6;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* ============================================================
+   RESULTS
+   ============================================================ */
+
+.results-page {
+
+    width:
+        min(
+            1250px,
+            92%
+        );
+
+    margin:
+        auto;
+
+    padding-bottom:
+        100px;
+
+}
+
+
+.results-hero {
+
+    padding-bottom:
+        45px;
+
+}
+
+
+.back-btn {
+
+    text-decoration:
+        none;
+
+    color:
+        #1769e0;
+
+    font-weight:
+        700;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ============================================================
+   PROFILE SUMMARY
+   ============================================================ */
+
+.profile-summary {
+
+    background:
+        white;
+
+    border:
+        1px solid
+        #e0e8f2;
+
+    border-radius:
+        20px;
+
+    padding:
+        25px 30px;
+
+    margin-bottom:
+        45px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            20,
+            55,
+            100,
+            0.06
+        );
+
+}
+
+
+.summary-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+}
+
+
+.summary-icon {
+
+    font-size:
+        23px;
+
+}
+
+
+.summary-title h3 {
+
+    font-size:
+        19px;
+
+}
+
+
+.summary-title p {
+
+    color:
+        #7a899d;
+
+    font-size:
+        13px;
+
+    margin-top:
+        3px;
+
+}
+
+
+.profile-tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+    margin-top:
+        20px;
+
+}
+
+
+.profile-tags span {
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        20px;
+
+    background:
+        #f0f6ff;
+
+    color:
+        #35608e;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+}
+
+
+/* ============================================================
+   RESULT HEADING
+   ============================================================ */
+
+.results-heading {
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.results-heading h2 {
+
+    font-size:
+        27px;
+
+}
+
+
+.results-heading p {
+
+    color:
+        #718198;
+
+    margin-top:
+        6px;
+
+}
+
+
+/* ============================================================
+   SCHEME CARD
+   ============================================================ */
+
+.recommendations-container {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        30px;
+
+}
+
+
+.scheme-card {
+
+    background:
+        white;
+
+    border:
+        1px solid
+        #dfe7f0;
+
+    border-radius:
+        24px;
+
+    padding:
+        35px 38px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            20,
+            55,
+            100,
+            0.06
+        );
+
+    animation:
+        cardAppear
+        0.6s
+        ease
+        both;
+
+    transition:
+        0.3s;
+
+}
+
+
+.scheme-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 25px 55px
+        rgba(
+            20,
+            55,
+            100,
+            0.11
+        );
+
+}
+
+
+.scheme-card-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
+
+}
+
+
+.scheme-number {
+
+    min-width:
+        52px;
+
+    height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        15px;
+
+    background:
+        #edf5ff;
+
+    color:
+        #1769e0;
+
+    font-size:
+        19px;
+
+    font-weight:
+        800;
+
+}
+
+
+.scheme-card-header h2 {
+
+    font-size:
+        25px;
+
+    flex:
+        1;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.score {
+
+    padding:
+        8px 17px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+}
+
+
+.score.high {
+
+    color:
+        #098443;
+
+    background:
+        #e7f8ee;
+
+}
+
+
+.score.medium {
+
+    color:
+        #a16a00;
+
+    background:
+        #fff5dc;
+
+}
+
+
+.score.low {
+
+    color:
+        #c0392b;
+
+    background:
+        #ffebe8;
+
+}
+
+
+.scheme-divider {
+
+    height:
+        1px;
+
+    background:
+        #e4eaf1;
+
+    margin:
+        27px 0;
+
+}
+
+
+.scheme-section h4,
+.website-section h4 {
+
+    color:
+        #1769e0;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        0.3px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.scheme-section p {
+
+    color:
+        #60738e;
+
+    line-height:
+        1.8;
+
+    font-size:
+        15px;
+
+}
+
+
+.scheme-columns {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        60px;
+
+    margin:
+        30px 0;
+
+}
+
+
+.scheme-section {
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.website-section {
+
+    margin-top:
+        10px;
+
+}
+
+
+.website-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    text-decoration:
+        none;
+
+    color:
+        #126be5;
+
+    font-weight:
+        700;
+
+    font-size:
+        14px;
+
+    padding:
+        12px 18px;
+
+    border:
+        1px solid
+        #cfe0f7;
+
+    border-radius:
+        10px;
+
+    transition:
+        0.25s;
+
+}
+
+
+.website-btn:hover {
+
+    background:
+        #edf5ff;
+
+    transform:
+        translateX(3px);
+
+}
+
+
+.important-note {
+
+    margin-top:
+        25px;
+
+    padding:
+        17px;
+
+    border-radius:
+        12px;
+
+    background:
+        #fff8e8;
+
+    border:
+        1px solid
+        #f5dfaa;
+
+}
+
+
+.important-note strong {
+
+    color:
+        #946200;
+
+    font-size:
+        13px;
+
+}
+
+
+.important-note p {
+
+    color:
+        #80672d;
+
+    margin-top:
+        7px;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.empty-state {
+
+    text-align:
+        center;
+
+    padding:
+        70px 30px;
+
+    background:
+        white;
+
+    border-radius:
+        24px;
+
+}
+
+
+.empty-icon {
+
+    font-size:
+        45px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.empty-state h2 {
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.empty-state p {
+
+    color:
+        #74849a;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.loading-overlay {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(
+            7,
+            29,
+            55,
+            0.45
+        );
+
+    backdrop-filter:
+        blur(8px);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    z-index:
+        999;
+
+}
+
+
+.loader-card {
+
+    background:
+        white;
+
+    padding:
+        45px;
+
+    border-radius:
+        24px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+
+}
+
+
+.loader {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border:
+        4px solid
+        #e3edfa;
+
+    border-top-color:
+        #1769e0;
+
+    border-radius:
+        50%;
+
+    animation:
+        spin
+        0.8s
+        linear
+        infinite;
+
+    margin:
+        0 auto 20px;
+
+}
+
+
+.loader-card h3 {
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.loader-card p {
+
+    color:
+        #74849a;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+.hidden {
+
+    display:
+        none !important;
+
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                -15px
+            );
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(
+                0
+            );
+
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                25px
+            );
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(
+                0
+            );
+
+    }
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(
+                25px
+            );
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(
+                0
+            );
+
+    }
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(
+                360deg
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (
+    max-width: 768px
+) {
+
+
+    .navbar {
+
+        padding:
+            0 5%;
+
+    }
+
+
+    .status {
+
+        display:
+            none;
+
+    }
+
+
+    .hero,
+    .results-hero {
+
+        padding-top:
+            55px;
+
+    }
+
+
+    .hero h1,
+    .results-hero h1 {
+
+        font-size:
+            40px;
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .profile-container {
+
+        padding:
+            25px;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .form-group.full-width {
+
+        grid-column:
+            span 1;
+
+    }
+
+
+    .form-footer {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .primary-btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .scheme-card {
+
+        padding:
+            25px;
+
+    }
+
+
+    .scheme-card-header {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .scheme-card-header h2 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .scheme-columns {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+}
+
+
+@media (
+    max-width: 480px
+) {
+
+
+    .brand h2 {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .brand-logo {
+
+        width:
+            43px;
+
+        height:
+            43px;
+
+    }
+
+
+    .hero h1,
+    .results-hero h1 {
+
+        font-size:
+            34px;
+
+    }
+
+
+    .profile-container {
+
+        width:
+            94%;
+
+    }
+
+
+}
+
+/* ============================================================
+   🇮🇳 SCHEMEAI — INDIA INSPIRED VISUAL ENHANCEMENTS
+   IMPORTANT:
+   This section ONLY adds visual enhancements.
+   Existing layout and structure are NOT modified.
+   ============================================================ */
+
+
+/* ============================================================
+   INDIAN TRICOLOR TOP ACCENT
+   ============================================================ */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 9999;
+
+    background: linear-gradient(
+        to right,
+        #ff9933 0%,
+        #ff9933 33.33%,
+        #ffffff 33.33%,
+        #ffffff 66.66%,
+        #138808 66.66%,
+        #138808 100%
+    );
+}
+
+
+/* ============================================================
+   SUBTLE INDIAN FLAG GLOW
+   ============================================================ */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(255, 153, 51, 0.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 92% 25%,
+            rgba(19, 136, 8, 0.07),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(23, 105, 224, 0.06),
+            transparent 30%
+        );
+}
+
+
+/* ============================================================
+   NAVBAR — TRICOLOR ACCENT
+   ============================================================ */
+
+.navbar {
+    position: sticky;
+    overflow: hidden;
+}
+
+
+/* small tricolor highlight inside navbar */
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #ff9933 0%,
+        #ff9933 33%,
+        #ffffff 33%,
+        #ffffff 66%,
+        #138808 66%,
+        #138808 100%
+    );
+}
+
+
+/* ============================================================
+   BRAND LOGO — ASHOK CHAKRA STYLE
+   ============================================================ */
+
+.brand-logo {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b5ed7,
+            #1769e0,
+            #0755b8
+        );
+}
+
+
+/* subtle chakra ring */
+
+.brand-logo::after {
+    content: "✦";
+
+    position: absolute;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.25);
+
+    transform: rotate(45deg);
+
+    right: 7px;
+    bottom: 5px;
+}
+
+
+/* ============================================================
+   HERO BACKGROUND DECORATION
+   ============================================================ */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* saffron decorative glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    top: 40px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,153,51,0.10),
+            transparent 70%
+        );
+
+    animation:
+        floatingGlow 8s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* green decorative glow */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    top: 100px;
+    right: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(19,136,8,0.09),
+            transparent 70%
+        );
+
+    animation:
+        floatingGlow 10s ease-in-out infinite reverse;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   HERO CONTENT ABOVE DECORATIONS
+   ============================================================ */
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ============================================================
+   HERO BADGE — INDIA INSPIRED
+   ============================================================ */
+
+.hero-badge {
+    position: relative;
+
+    border:
+        1px solid
+        rgba(23,105,224,0.12);
+
+    box-shadow:
+        0 8px 25px
+        rgba(23,105,224,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.hero-badge:hover {
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+    box-shadow:
+        0 12px 30px
+        rgba(23,105,224,0.15);
+}
+
+
+/* ============================================================
+   HERO TITLE COLOR ENHANCEMENT
+   ============================================================ */
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #1769e0 45%,
+            #138808
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+/* ============================================================
+   PROFILE CARD — PREMIUM GLASS EFFECT
+   ============================================================ */
+
+.profile-container {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.profile-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #ffffff 50%,
+            #138808
+        );
+}
+
+
+.profile-container:hover {
+    box-shadow:
+        0 30px 80px
+        rgba(22,61,110,0.14);
+}
+
+
+/* ============================================================
+   FORM ICON
+   ============================================================ */
+
+.form-icon {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf5ff,
+            #e1efff
+        );
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(23,105,224,0.08);
+}
+
+
+/* ============================================================
+   INPUT HOVER
+   ============================================================ */
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color:
+        #9fc4f5;
+
+    background:
+        #ffffff;
+}
+
+
+/* ============================================================
+   PRIMARY BUTTON — TRICOLOR MICRO ACCENT
+   ============================================================ */
+
+.primary-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.primary-btn::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background:
+        #ff9933;
+}
+
+
+.primary-btn::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background:
+        #138808;
+}
+
+
+.primary-btn:hover {
+    filter:
+        brightness(1.04);
+}
+
+
+/* ============================================================
+   RESULTS PAGE — INDIAN THEME
+   ============================================================ */
+
+.results-page {
+    position: relative;
+}
+
+
+.results-hero {
+    position: relative;
+}
+
+
+/* ============================================================
+   RESULT HERO TITLE
+   ============================================================ */
+
+.results-hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #1769e0 50%,
+            #138808
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+/* ============================================================
+   PROFILE SUMMARY COLOR ACCENT
+   ============================================================ */
+
+.profile-summary {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.profile-summary::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff9933,
+            #1769e0,
+            #138808
+        );
+}
+
+
+/* ============================================================
+   PROFILE TAGS
+   ============================================================ */
+
+.profile-tags span {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.profile-tags span:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        #e5f0ff;
+}
+
+
+/* ============================================================
+   SCHEME CARDS — COLOR ACCENT
+   ============================================================ */
+
+.scheme-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.scheme-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #1769e0 50%,
+            #138808
+        );
+
+    opacity:
+        0.75;
+}
+
+
+/* ============================================================
+   SCHEME NUMBER — ASHOK CHAKRA INSPIRED
+   ============================================================ */
+
+.scheme-number {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.scheme-card:hover .scheme-number {
+    transform:
+        rotate(-3deg)
+        scale(1.05);
+
+    box-shadow:
+        0 8px 20px
+        rgba(23,105,224,0.15);
+}
+
+
+/* ============================================================
+   SCORE BADGES
+   ============================================================ */
+
+.score.high {
+    border:
+        1px solid
+        rgba(19,136,8,0.12);
+}
+
+
+.score.medium {
+    border:
+        1px solid
+        rgba(255,153,51,0.20);
+}
+
+
+/* ============================================================
+   WEBSITE BUTTON
+   ============================================================ */
+
+.website-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.website-btn::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #1769e0,
+            #138808
+        );
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.website-btn:hover::after {
+    width: 100%;
+}
+
+
+/* ============================================================
+   LOADING CARD
+   ============================================================ */
+
+.loader-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.loader-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            #ffffff,
+            #138808
+        );
+}
+
+
+/* ============================================================
+   FLOATING BACKGROUND GLOW ANIMATION
+   ============================================================ */
+
+@keyframes floatingGlow {
+
+    0% {
+        transform:
+            translateY(0px)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            translateY(0px)
+            scale(1);
+    }
+
+}
+
+
+/* ============================================================
+   SUBTLE CARD SHINE
+   ============================================================ */
+
+.scheme-card::after,
+.profile-container::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -100%;
+
+    width: 50%;
+    height: 300%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    transform:
+        rotate(25deg);
+
+    transition:
+        0.8s;
+
+    pointer-events:
+        none;
+
+}
+
+
+.scheme-card:hover::after,
+.profile-container:hover::after {
+
+    left:
+        150%;
+
+}
+
+
+/* ============================================================
+   MOBILE SAFETY
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .hero::before {
+        left: -250px;
+    }
+
+    .hero::after {
+        right: -250px;
+    }
+
+
+}
+/* ============================================================
+   🇮🇳 INDIAN THEME VISUAL ENHANCEMENTS
+   ADD-ON ONLY — EXISTING STRUCTURE PRESERVED
+   ============================================================ */
+
+
+/* ============================================================
+   TRICOLOUR TOP ACCENT
+   ============================================================ */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933 0%,
+            #ff9933 33%,
+            #ffffff 33%,
+            #ffffff 66%,
+            #138808 66%,
+            #138808 100%
+        );
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+}
+
+
+/* ============================================================
+   NAVBAR TRICOLOUR BOTTOM ACCENT
+   ============================================================ */
+
+.navbar {
+
+    position: sticky;
+
+    overflow: hidden;
+
+}
+
+
+.navbar::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933 0%,
+            #ff9933 33%,
+            #ffffff 33%,
+            #ffffff 66%,
+            #138808 66%,
+            #138808 100%
+        );
+
+}
+
+
+/* ============================================================
+   ASHOKA CHAKRA LOGO
+   ============================================================ */
+
+.brand-logo {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b5ed7,
+            #1677ff
+        );
+
+}
+
+
+.brand-logo img {
+
+    width: 72%;
+
+    height: 72%;
+
+    object-fit: contain;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.brand-logo:hover img {
+
+    transform:
+        rotate(360deg);
+
+}
+
+
+/* ============================================================
+   HERO INDIAN EMBLEM
+   ============================================================ */
+
+.hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.hero-indian-emblem {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    animation:
+        emblemAppear
+        1s
+        ease
+        both;
+
+}
+
+
+.hero-indian-emblem img {
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: contain;
+
+    opacity: 0.95;
+
+    filter:
+        drop-shadow(
+            0 8px 15px
+            rgba(
+                9,
+                32,
+                63,
+                0.12
+            )
+        );
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.hero-indian-emblem img:hover {
+
+    transform:
+        scale(1.06)
+        translateY(-3px);
+
+}
+
+
+/* ============================================================
+   ASHOKA CHAKRA DECORATION
+   ============================================================ */
+
+.india-decoration {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+.chakra-decoration {
+
+    left: 7%;
+
+    top: 150px;
+
+    width: 170px;
+
+    height: 170px;
+
+    opacity: 0.055;
+
+    animation:
+        floatChakra
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.chakra-decoration img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* ============================================================
+   PEACOCK FEATHER
+   ============================================================ */
+
+.peacock-decoration {
+
+    right: 4%;
+
+    top: 120px;
+
+    width: 210px;
+
+    height: 430px;
+
+    opacity: 0.12;
+
+    transform:
+        rotate(8deg);
+
+    animation:
+        floatPeacock
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+.peacock-decoration img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 20px
+            rgba(
+                0,
+                120,
+                100,
+                0.08
+            )
+        );
+
+}
+
+
+/* ============================================================
+   TRICOLOUR DECORATIVE WAVES
+   ============================================================ */
+
+.tricolor-wave {
+
+    position: absolute;
+
+    width: 520px;
+
+    height: 220px;
+
+    border-radius:
+        50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: 0.12;
+
+    filter:
+        blur(1px);
+
+}
+
+
+/* LEFT SAFFRON */
+
+.wave-left {
+
+    left:
+        -220px;
+
+    top:
+        130px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #ff9933 0%,
+            rgba(
+                255,
+                153,
+                51,
+                0
+            )
+            70%
+        );
+
+    transform:
+        rotate(
+            15deg
+        );
+
+}
+
+
+/* RIGHT GREEN */
+
+.wave-right {
+
+    right:
+        -220px;
+
+    top:
+        280px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #138808 0%,
+            rgba(
+                19,
+                136,
+                8,
+                0
+            )
+            70%
+        );
+
+    transform:
+        rotate(
+            -15deg
+        );
+
+}
+
+
+/* ============================================================
+   HERO CONTENT ABOVE DECORATIONS
+   ============================================================ */
+
+.hero > *:not(
+    .india-decoration
+):not(
+    .tricolor-wave
+) {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* ============================================================
+   HERO BADGE
+   ============================================================ */
+
+.hero-badge {
+
+    border:
+        1px solid
+        rgba(
+            23,
+            105,
+            224,
+            0.12
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            23,
+            105,
+            224,
+            0.08
+        );
+
+}
+
+
+/* ============================================================
+   HERO TITLE COLOUR
+   ============================================================ */
+
+.hero h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933 0%,
+            #1769e0 45%,
+            #138808 100%
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+/* ============================================================
+   FORM CARD TRICOLOUR BORDER
+   ============================================================ */
+
+.profile-container {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.profile-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933 0%,
+            #ff9933 33%,
+            #ffffff 33%,
+            #ffffff 66%,
+            #138808 66%,
+            #138808 100%
+        );
+
+}
+
+
+/* ============================================================
+   FORM ICON
+   ============================================================ */
+
+.form-icon {
+
+    border:
+        1px solid
+        rgba(
+            23,
+            105,
+            224,
+            0.12
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            23,
+            105,
+            224,
+            0.08
+        );
+
+}
+
+
+/* ============================================================
+   PRIMARY BUTTON
+   ============================================================ */
+
+.primary-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9933 0%,
+            #1769e0 48%,
+            #138808 100%
+        );
+
+    background-size:
+        200%
+        200%;
+
+    transition:
+        all 0.35s ease;
+
+}
+
+
+.primary-btn:hover {
+
+    background-position:
+        100%
+        50%;
+
+    transform:
+        translateY(-3px)
+        scale(1.01);
+
+}
+
+
+/* ============================================================
+   INPUT HOVER
+   ============================================================ */
+
+.form-group input:hover,
+.form-group select:hover {
+
+    border-color:
+        #9bbfe8;
+
+    background:
+        #ffffff;
+
+}
+
+
+/* ============================================================
+   FLOATING ANIMATIONS
+   ============================================================ */
+
+@keyframes floatChakra {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+@keyframes floatPeacock {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(8deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(11deg)
+            translateY(-15px);
+
+    }
+
+}
+
+
+@keyframes emblemAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-20px)
+            scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 0.95;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (
+    max-width: 768px
+) {
+
+    .hero-indian-emblem img {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+
+    .chakra-decoration {
+    position: absolute;
+    left: 8%;
+    top: 80px;
+    width: 150px;
+    height: 150px;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.chakra-decoration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+    .peacock-decoration {
+    position: absolute;
+    right: 5%;
+    top: 70px;
+    width: 220px;
+    height: 300px;
+    opacity: 0.12;
+    z-index: 0;
+}
+
+.peacock-decoration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+}
+
+@media (
+    max-width: 480px
+) {
+
+    .hero-indian-emblem img {
+
+        width:
+            65px;
+
+        height:
+            65px;
+
+    }
+
+
+    .peacock-decoration {
+
+        display:
+            none;
+
+    }
+
+}
