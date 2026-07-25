@@ -1,0 +1,63 @@
+[
+    {
+        "scheme_name": "PM Scholarship Scheme",
+        "category": "Education",
+        "eligibility": {
+            "occupation": "Student",
+            "income_limit": 300000,
+            "state": "All States",
+            "age": "18-25"
+        },
+        "benefits": [
+            "Scholarship up to ₹20,000",
+            "Direct Bank Transfer"
+        ],
+        "documents": [
+            "Aadhaar Card",
+            "Income Certificate",
+            "Student ID Card"
+        ],
+        "official_link": "https://scholarships.gov.in",
+        "description": "Financial assistance for eligible students pursuing higher education."
+    },
+
+    {
+        "scheme_name": "PM Kisan Samman Nidhi",
+        "category": "Agriculture",
+        "eligibility": {
+            "occupation": "Farmer",
+            "income_limit": null,
+            "state": "All States"
+        },
+        "benefits": [
+            "₹6,000 annual financial assistance"
+        ],
+        "documents": [
+            "Aadhaar Card",
+            "Land Records",
+            "Bank Passbook"
+        ],
+        "official_link": "https://pmkisan.gov.in",
+        "description": "Income support scheme for small and marginal farmers."
+    },
+
+    {
+        "scheme_name": "Mukhyamantri Kanya Sumangala",
+        "category": "Women",
+        "eligibility": {
+            "gender": "Female",
+            "income_limit": 300000,
+            "state": "Uttar Pradesh"
+        },
+        "benefits": [
+            "Financial assistance at different stages of education"
+        ],
+        "documents": [
+            "Birth Certificate",
+            "Aadhaar Card",
+            "Income Certificate"
+        ],
+        "official_link": "https://mksy.up.gov.in",
+        "description": "Financial support for girl children in Uttar Pradesh."
+    }
+]
