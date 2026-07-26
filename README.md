@@ -1,4 +1,4 @@
-# 🇮🇳 SchemeAI – AI Government Scheme Assistant
+# SchemeAI – AI Government Scheme Assistant
 
 > An AI-powered government scheme recommendation system that helps citizens discover relevant Government of India schemes based on their personal profile, eligibility, and requirements.
 
