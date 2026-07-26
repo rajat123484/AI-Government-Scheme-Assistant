@@ -274,3 +274,60 @@ The interface is designed to be simple and accessible for users who may not have
                                              │ Frontend Result │
                                              │     Display     │
                                              └─────────────────┘
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/rajat123484/AI-Government-Scheme-Assistant.git
+cd AI-Government-Scheme-Assistant
+```
+## Backend Setup
+
+```bash
+cd backend
+pip install -r requirements.txt
+```
+## Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+## Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+Add the following:
+
+```env
+GEMINI_API_KEY=YOUR_GOOGLE_AI_STUDIO_API_KEY
+```
+
+Generate your API key from **Google AI Studio**.
+
+For security reasons, API keys are **not included** in this repository.
+
+React.js
+FastAPI
+Python
+FAISS
+Hugging Face Embeddings
+Google Gemini AI
+HTML
+CSS
+JavaScript
+
+## Team
+
+CloudNova
+
+- Rajat Tomar
+- Sakshi Kumari
+- Shaurya Sharma
+- Siddhi Rai
+- Priyani panchal
+- Shivangi singh
+...
+  
