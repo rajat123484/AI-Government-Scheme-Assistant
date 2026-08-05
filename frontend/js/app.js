@@ -6,7 +6,7 @@
 // IMPORTANT:
 // Change this if your FastAPI backend runs on another port.
 
-const API_BASE_URL = "ai-government-scheme-assistant-production.up.railway.app";
+const API_BASE_URL = "https://ai-government-scheme-assistant-production.up.railway.app";
 
 
 // ============================================================
